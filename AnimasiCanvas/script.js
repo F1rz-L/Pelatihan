@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function(){
-    document.body.style.backgroundColor="red";
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
 
