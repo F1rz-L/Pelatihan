@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="seconds-1">
+      <div id="segment1" class="segment s0 s2 s3 s5 s6 s7 s8 s9"></div>
+      <div id="segment2" class="segment s0 s1 s2 s3 s4 s7 s8 s9"></div>
+      <div id="segment3" class="segment s0 s1 s3 s4 s5 s6 s7 s8 s9"></div>
+      <div id="segment4" class="segment s0 s2 s3 s5 s6 s8 s9"></div>
+      <div id="segment5" class="segment s0 s2 s6 s8"></div>
+      <div id="segment6" class="segment s0 s4 s5 s6 s8 s9"></div>
+      <div id="segment7" class="segment s2 s3 s4 s5 s6 s8 s9"></div>
+    </div>
+
+    <div id="seconds-2">
+      <div id="segment1" class="segment1 s0 s2 s3 s5 s6 s7 s8 s9"></div>
+      <div id="segment2" class="segment1 s0 s1 s2 s3 s4 s7 s8 s9"></div>
+      <div id="segment3" class="segment1 s0 s1 s3 s4 s5 s6 s7 s8 s9"></div>
+      <div id="segment4" class="segment1 s0 s2 s3 s5 s6 s8 s9"></div>
+      <div id="segment5" class="segment1 s0 s2 s6 s8"></div>
+      <div id="segment6" class="segment1 s0 s4 s5 s6 s8 s9"></div>
+      <div id="segment7" class="segment1 s2 s3 s4 s5 s6 s8 s9"></div>
+    </div>
+    <div id="seconds-3">
+      <div id="segment1" class="segment4 s0 s2 s3 s5 s6 s7 s8 s9"></div>
+      <div id="segment2" class="segment4 s0 s1 s2 s3 s4 s7 s8 s9"></div>
+      <div id="segment3" class="segment4 s0 s1 s3 s4 s5 s6 s7 s8 s9"></div>
+      <div id="segment4" class="segment4 s0 s2 s3 s5 s6 s8 s9"></div>
+      <div id="segment5" class="segment4 s0 s2 s6 s8"></div>
+      <div id="segment6" class="segment4 s0 s4 s5 s6 s8 s9"></div>
+      <div id="segment7" class="segment4 s2 s3 s4 s5 s6 s8 s9"></div>
+    </div>
+
+    <div id="miliseconds-1">
+      <div id="segment1" class="segment2 s0 s2 s3 s5 s6 s7 s8 s9"></div>
+      <div id="segment2" class="segment2 s0 s1 s2 s3 s4 s7 s8 s9"></div>
+      <div id="segment3" class="segment2 s0 s1 s3 s4 s5 s6 s7 s8 s9"></div>
+      <div id="segment4" class="segment2 s0 s2 s3 s5 s6 s8 s9"></div>
+      <div id="segment5" class="segment2 s0 s2 s6 s8"></div>
+      <div id="segment6" class="segment2 s0 s4 s5 s6 s8 s9"></div>
+      <div id="segment7" class="segment2 s2 s3 s4 s5 s6 s8 s9"></div>
+    </div>
+    <div id="miliseconds-2">
+      <div id="segment1" class="segment3 s0 s2 s3 s5 s6 s7 s8 s9"></div>
+      <div id="segment2" class="segment3 s0 s1 s2 s3 s4 s7 s8 s9"></div>
+      <div id="segment3" class="segment3 s0 s1 s3 s4 s5 s6 s7 s8 s9"></div>
+      <div id="segment4" class="segment3 s0 s2 s3 s5 s6 s8 s9"></div>
+      <div id="segment5" class="segment3 s0 s2 s6 s8"></div>
+      <div id="segment6" class="segment3 s0 s4 s5 s6 s8 s9"></div>
+      <div id="segment7" class="segment3 s2 s3 s4 s5 s6 s8 s9"></div>
+    </div>
+
+    <div class="button">
+      <button id="start">start</button>
+      <button id="pause">pause</button>
+      <button id="reset">reset</button>
+    </div>
+
+    <span id="titik1">:</span>
+
+    <script type="text/javascript">
+      function miliSecDisplay(number) {
+        let miliSec1 = document.querySelectorAll(".segment2");
+        let miliSec2 = document.querySelectorAll(".segment3");
+
+        miliSec1.forEach((e) => {
+          if (e.classList.contains("s" + number.charAt(0))) {
+            e.style.backgroundColor = "red";
+          } else {
+            e.style.backgroundColor = "rgb(88,1,1)";
+          }
+        });
+
+        miliSec2.forEach((e) => {
+          if (e.classList.contains("s" + number.charAt(1))) {
+            e.style.backgroundColor = "red";
+          } else {
+            e.style.backgroundColor = "rgb(88,1,1)";
+          }
+        });
+      }
+
+      function secDisplay(number) {
+        let sec1 = document.querySelectorAll(".segment");
+        let sec2 = document.querySelectorAll(".segment1");
+        let sec3 = document.querySelectorAll(".segment4");
+
+        sec1.forEach((e) => {
+          if (e.classList.contains("s" + number.charAt(0))) {
+            e.style.backgroundColor = "red";
+          } else {
+            e.style.backgroundColor = "rgb(88,1,1)";
+          }
+        });
+        sec2.forEach((e) => {
+          if (e.classList.contains("s" + number.charAt(1))) {
+            e.style.backgroundColor = "red";
+          } else {
+            e.style.backgroundColor = "rgb(88,1,1)";
+          }
+        });
+        sec3.forEach((e) => {
+          if (e.classList.contains("s" + number.charAt(2))) {
+            e.style.backgroundColor = "red";
+          } else {
+            e.style.backgroundColor = "rgb(88,1,1)";
+          }
+        });
+      }
+
+      let [second, milisecond] = [0, 0];
+      let int = null;
+      miliSecDisplay(milisecond.toPrecision(2));
+      secDisplay(second.toPrecision(1));
+
+      document.getElementById("start").addEventListener("click", () => {
+        if (int !== null) {
+          clearInterval(int);
+        }
+        int = setInterval(ubah, 10);
+      });
+
+      document.getElementById("pause").addEventListener("click", () => {
+        clearInterval(int);
+      });
+
+      document.getElementById("reset").addEventListener("click", () => {
+        clearInterval(int);
+        [second, milisecond] = [0, 0];
+        miliSecDisplay(milisecond.toPrecision(2));
+        secDisplay(second.toPrecision(1));
+      });
+
+      function ubah() {
+
+        if (second == 999 && milisecond == 59) {
+          clearInterval(int);
+
+        } else {
+          
+          milisecond++;
+          miliSecDisplay(milisecond.toPrecision(2));
+
+          if (milisecond == 100) {
+
+            milisecond = 0;
+            miliSecDisplay(milisecond.toPrecision(2));
+            second++;
+            secDisplay(second.toPrecision(1));
+            
+            if (second >= 10) {
+              secDisplay(second.toPrecision(2));
+            }
+
+            if (second >= 100) {
+              secDisplay(second.toPrecision(3));
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,238 +1,104 @@
-/* body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #222626;
-}
-.digital-watch .hour,
-.digital-watch .minute,
-.digital-watch .second {
-  position: relative;
-  display: inline-block;
-  margin: 30px;
-  font-size: 0;
-}
-.digital-watch .hour::before,
-.digital-watch .hour::after,
-.digital-watch .minute::before,
-.digital-watch .minute::after {
-  content: '';
-  position: absolute;
-  right: -40px;
-  width: 20px;
-  height: 20px;
-  background-color: #0984e3;
-}
-.digital-watch .hour::before,
-.digital-watch .minute::before {
-  top: 80px;
-}
-.digital-watch .hour::after,
-.digital-watch .minute::after {
-  top: 180px;
-}
-.digital-watch svg {
-  display: inline-block;
-  margin: 20px;
-}
-.display-watch svg .segment {
-  fill: rgba(0, 0, 0, 0.15);
-  transition: 0.3s ease-in-out;
+*{
+    margin: 0;
+    padding: 0;
 }
 
-.digital-watch svg.num-1 .b,
-.digital-watch svg.num-1 .c,
-.digital-watch svg.num-2 .a,
-.digital-watch svg.num-2 .b,
-.digital-watch svg.num-2 .d,
-.digital-watch svg.num-2 .e,
-.digital-watch svg.num-2 .g,
-.digital-watch svg.num-3 .a,
-.digital-watch svg.num-3 .b,
-.digital-watch svg.num-3 .c,
-.digital-watch svg.num-3 .d,
-.digital-watch svg.num-3 .g,
-.digital-watch svg.num-4 .b,
-.digital-watch svg.num-4 .c,
-.digital-watch svg.num-4 .f,
-.digital-watch svg.num-4 .g,
-.digital-watch svg.num-5 .a,
-.digital-watch svg.num-5 .c,
-.digital-watch svg.num-5 .d,
-.digital-watch svg.num-5 .f,
-.digital-watch svg.num-5 .g,
-.digital-watch svg.num-6 .a,
-.digital-watch svg.num-6 .c,
-.digital-watch svg.num-6 .d,
-.digital-watch svg.num-6 .e,
-.digital-watch svg.num-6 .f,
-.digital-watch svg.num-6 .g,
-.digital-watch svg.num-7 .a,
-.digital-watch svg.num-7 .b,
-.digital-watch svg.num-7 .c,
-.digital-watch svg.num-8 .a,
-.digital-watch svg.num-8 .b,
-.digital-watch svg.num-8 .c,
-.digital-watch svg.num-8 .d,
-.digital-watch svg.num-8 .e,
-.digital-watch svg.num-8 .f,
-.digital-watch svg.num-8 .g,
-.digital-watch svg.num-9 .a,
-.digital-watch svg.num-9 .b,
-.digital-watch svg.num-9 .c,
-.digital-watch svg.num-9 .d,
-.digital-watch svg.num-9 .f,
-.digital-watch svg.num-9 .g,
-.digital-watch svg.num-0 .a,
-.digital-watch svg.num-0 .b,
-.digital-watch svg.num-0 .c,
-.digital-watch svg.num-0 .d,
-.digital-watch svg.num-0 .e,
-.digital-watch svg.num-0 .f {
-  fill: #0984e3;
-} */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body{
+    background-color: #18191a;
 }
 
-body {
-  background-color: rgb(32, 32, 32);
+.container{
+    display: flex;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.button {
-  position: relative;
-  top: 25em;
-  left: 20em;
+.btnContainer{
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
-.button button {
-  font-size: 50px;
-  margin-left: 20px;
-  padding: 15px;
+.btnContainer > button{
+    border: none;
+    width: 80px;
+    height: 40px;
+    margin: 10px;
+    color: #eee;
+    border-radius: 5px;
 }
 
-#seconds-1 {
-  position: relative;
-  margin-top: 20px;
-  margin-left: 20px;
+#start{
+     background-color: blue;
 }
 
-#seconds-2 {
-  position: relative;
-  margin-top: 20px;
-  margin-left: 180px;
-}
-#seconds-3 {
-  position: relative;
-  margin-top: 20px;
-  margin-left: 340px;
+#stop{
+    background-color: red;
 }
 
-#miliseconds-1 {
-  position: relative;
-  margin-top: 20px;
-  left: 550px;
+#reset{
+    background-color: orange;
 }
 
-#miliseconds-2 {
-  position: relative;
-  margin-top: 20px;
-  left: 710px;
+.section{
+    display: flex;
+    flex-wrap: wrap;
+    width: 120px;
+    margin: 10px;
 }
 
-.segment {
-  height: 20px;
-  width: 100px;
-  background-color: rgb(88, 1, 1);
-  border-radius: 10px;
-  position: absolute;
+.segment{
+    border-radius: 20px;
+}.seg1{
+    width: 100px;
+    height: 10px;
+    margin: 0px 10px 0px 10px;
+    background-color: #d9534f;
+}.seg2{
+    width: 10px;
+    height: 100px;
+    margin-right: 100px;
+    background-color: #d9534f;
+}.seg3{
+    width: 10px;
+    height: 100px;
+    background-color: #d9534f;
+}.seg4{
+    width: 100px;
+    height: 10px;
+    margin: 0px 10px 0px 10px;
+    background-color: #d9534f;
+}.seg5{
+    width: 10px;
+    height: 100px;
+    margin-right: 100px;
+    background-color: #d9534fed;
+}.seg6{
+    width: 10px;
+    height: 100px;
+    background-color: #d9534f;
+}.seg7{
+    width: 100px;
+    height: 10px;
+    margin: 0px 10px 0px 10px;
+    background-color: #d9534f;}
+.dot1{
+    height: 10px;
+    width: 10px;
+    background-color:#d9534f;
+    position: relative;
+    top: 35%;
+    border-radius: 100%;
 }
-.segment1 {
-  height: 20px;
-  width: 100px;
-  background-color: rgb(88, 1, 1);
-  border-radius: 10px;
-  position: absolute;
-}
-.segment2 {
-  height: 20px;
-  width: 100px;
-  background-color: rgb(88, 1, 1);
-  border-radius: 10px;
-  position: absolute;
-}
-.segment3 {
-  height: 20px;
-  width: 100px;
-  background-color: rgb(88, 1, 1);
-  border-radius: 10px;
-  position: absolute;
-}
-.segment4 {
-  height: 20px;
-  width: 100px;
-  background-color: rgb(88, 1, 1);
-  border-radius: 10px;
-  position: absolute;
-}
-
-#segment1 {
-  top: 15px;
-  left: 30px;
-}
-
-#segment2 {
-  width: 120px;
-  top: 20px;
-  left: 135px;
-  transform-origin: left;
-  transform: rotate(95deg);
-}
-
-#segment3 {
-  width: 120px;
-  top: 152px;
-  left: 125px;
-  transform-origin: left;
-  transform: rotate(95deg);
-}
-
-#segment4 {
-  top: 277px;
-  left: 10px;
-}
-
-#segment5 {
-  width: 120px;
-  top: 150px;
-  left: 17px;
-  transform-origin: left;
-  transform: rotate(95deg);
-}
-
-#segment6 {
-  width: 120px;
-  top: 20px;
-  left: 25px;
-  transform-origin: left;
-  transform: rotate(95deg);
-}
-
-#segment7 {
-  top: 145px;
-  left: 21px;
-}
-
-#titik1 {
-  font-size: 150px;
-  color: white;
-  position: relative;
-  left: 490px;
-  top: -40px;
+.dot2{
+    height: 10px;
+    width: 10px;
+    background-color:#d9534f;
+    position: relative;
+    top: 55%;
+    border-radius: 100%;
 }
