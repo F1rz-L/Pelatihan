@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.circle{
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 240px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    animation: 1.5s ease-in-out infinite rotate;
+}
+
+@keyframes rotate{
+    from{transform: translate(-50%, -50%) rotate(0deg);}
+    to{transform: translate(-50%, -50%) rotate(360deg);}
+}
+
+.color-1{
+    background-color: #19A68C;
+}
+
+.color-2{
+    background-color: #F63D3A;
+}
+
+.color-3{
+    background-color: #FDA543;
+}
+
+.color-4{
+    background-color: #193B48;
+}
