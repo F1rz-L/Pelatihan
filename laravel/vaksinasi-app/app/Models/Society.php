@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Society extends Model
 {
@@ -19,4 +20,12 @@ class Society extends Model
         'login_tokens',
         'regional_id',
     ];
+
+    protected $hidden = [
+        'password',
+    ];
+
+    public function regional(){
+        return $this -> belongsTo(Regional::class);
+    }
 }
