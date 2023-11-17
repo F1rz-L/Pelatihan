@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('medicals', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('spot_id')->constrained('spots');
+            $table->foreignId('spot_id')->constrained('spots')->nullable();
             $table->foreignId('user_id')->constrained('users');
             $table->enum('role',['officer','doctor']);
             $table->string('name',255);

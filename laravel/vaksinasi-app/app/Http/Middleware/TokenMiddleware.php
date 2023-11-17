@@ -23,6 +23,8 @@ class TokenMiddleware
                 'message' => 'Unauthorized User!'
             ], 401);
         }
+
+        $request->merge(['society' => $data]);
         return $next($request);
     }
 }

@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\SocietyController;
+use App\Http\Controllers\SpotController;
+use App\Http\Controllers\VaccinationController;
+use App\Models\Consultation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +21,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [SocietyController::class, 'login']);
 Route::post('/logout', [SocietyController::class, 'logout']);
+Route::middleware('auth.token')->group(function(){
+    Route::resource('/consultations', ConsultationController::class)->only('index','store');
+    Route::resource('/spots', SpotController::class)->only('index','show');
+    Route::resource('/vaccinations', VaccinationController::class)->only('index','store');
+});

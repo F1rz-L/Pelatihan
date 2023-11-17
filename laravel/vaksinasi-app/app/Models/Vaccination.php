@@ -18,4 +18,16 @@ class Vaccination extends Model
         'doctor_id',
         'officer_id',
     ];
+
+    public function spot(){
+        return $this->belongsTo(Spot::class);
+    }
+
+    public function vaccine(){
+        return $this->belongsTo(Vaccine::class);
+    }
+
+    public function vaccinator(){
+        return $this->belongsTo(Medical::class, 'doctor_id');
+    }
 }

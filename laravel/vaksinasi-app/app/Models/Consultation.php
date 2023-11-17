@@ -19,4 +19,8 @@ class Consultation extends Model
         'current_symptoms',
         'doctor_notes',
     ];
+
+    public function doctor(){
+        return $this->belongsTo(Medical::class); 
+    }
 }

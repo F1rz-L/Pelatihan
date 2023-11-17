@@ -16,4 +16,12 @@ class Spot extends Model
         'serve',
         'capacity',
     ];
+
+    public function vaccines(){
+        return $this->belongsToMany(Vaccine::class, 'spot_vaccines');
+    }
+
+    public function regional(){
+        return $this->belongsTo(Regional::class);
+    }
 }
