@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attack on Virus</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="game-screen">
+        <div id="instructions-screen" class="screen">
+            <div class="dialog">
+                <h5 class="dialog-title">Instructions for Attack on Virus</h5>
+                <div class="dialog-content">
+                    <ol>
+                        <li>Input Username and click play</li>
+                        <li>Destroy virus with D, F, J, and K key</li>
+                        <li>Reach new high scores</li>
+                        <li>Enjoy! :3</li>
+                    </ol>
+                </div>
+                <input type="text" class="form-control" placeholder="Input your username">
+                <button class="btn btn-primary">Play</button>
+            </div>
+        </div>
+        <div id="pause-screen" class="screen">
+            <div class="dialog">
+                <h5 class="dialog-title">Game Paused</h5>
+                <div id="button-group">
+                    <button type="button" class="btn btn-secondary">Continue</button>
+                    <button type="button" class="btn btn-primary">Restart</button>
+                </div>
+            </div>
+        </div>
+        <div id="end-screen" class="screen">
+            <div class="dialog">
+                <h5 class="dialog-title">Game Over</h5>
+                <div class="dialog-content text-center">
+                    <p>Score : <span id="score">0</span></p>
+                    <p>High Score : <span id="high-score">0</span></p>
+                    <p>Player : </p>
+                    <button class="btn btn-primary mt-2">Play Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
