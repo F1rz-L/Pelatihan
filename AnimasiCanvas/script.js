@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function animate(){
         xCircle +=2
-        if(xCircle>canvasWidth+radiusCircle){
+        if(xCircle > canvasWidth+radiusCircle){
             xCircle = radiusCircle * -1;
         }
         drawBackground()

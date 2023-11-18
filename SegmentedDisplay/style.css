@@ -7,6 +7,12 @@ body{
     background-color: #18191a;
 }
 
+.timeContainer {
+    color: #eee;
+    font-size: large;
+    margin: 10px;
+}
+
 .container{
     display: flex;
     position: fixed;
