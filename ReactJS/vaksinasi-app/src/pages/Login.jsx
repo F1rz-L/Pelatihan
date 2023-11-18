@@ -12,7 +12,7 @@ const Login = () => {
         if(idCardNumber.trim()=="" || password.trim()==""){
             setError("ID Card Number and Password must be filled")
         }
-        const data  = await FetchHelper.post("Login",{
+        const data  = FetchHelper.post("Login",{
             id_card_number : idCardNumber,
             password : password,
         })
@@ -24,7 +24,8 @@ const Login = () => {
                     <Alert variant="danger" onClose={() => setError("")} dismissible>
                         {error}
                     </Alert>
-                )} 
+                )}
+                <Button variant="primary" href="#/kasir">Kasir</Button>
                 <Card className="card-login">
                     <Card.Body>
                         <Card.Title>Login</Card.Title>

@@ -2,8 +2,9 @@ import { RouterProvider, createBrowserRouter, createHashRouter } from 'react-rou
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AppNavbar from './components/appNavbar';
 import Dashboard from './pages/Dashboard';
-import Login from './pages/login';
 import PrivatePage from './components/PrivatePage';
+import Login from './pages/Login';
+import Kasir from './pages/Kasir';
 
 const router = createHashRouter([
   {
@@ -14,10 +15,11 @@ const router = createHashRouter([
   },
   {
     path:'/login',
-    element: <Login/>
+    element:<Login/>
   },
   {
-
+    path:'/kasir',
+    element: <Kasir/>
   }
 ]);
 

@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\ConsultationController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SocietyController;
 use App\Http\Controllers\SpotController;
 use App\Http\Controllers\VaccinationController;
@@ -26,3 +30,9 @@ Route::middleware('auth.token')->group(function(){
     Route::resource('/spots', SpotController::class)->only('index','show');
     Route::resource('/vaccinations', VaccinationController::class)->only('index','store');
 });
+Route::middleware('login')->group(function(){
+    Route::resource('/barang', BarangController::class);
+    Route::resource('/order',OrderController::class);
+});
+Route::resource('/kategori', KategoriController::class);
+Route::post('/login', [AuthController::class, 'login']);
