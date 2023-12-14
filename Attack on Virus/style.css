@@ -66,16 +66,21 @@ body {
     margin: 15px 20px;
 }
 
-.btn-primary{
+.btn.btn-primary{
     background-color: rgb(183, 45, 45);
     color: #eee;
     cursor: pointer;
 }
 
-.btn-secondary{
+.btn.btn-secondary{
     background-color: rgb(64, 171, 40);
     color: #eee;
     cursor: pointer;
+}
+
+.btn.disabled{
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
 .mt-2{
@@ -84,6 +89,10 @@ body {
 
 .mt-3{
     margin-top: 3rem;
+}
+
+.mx-1{
+    margin: 2rem 0rem;
 }
 
 .text-center{
