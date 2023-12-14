@@ -1,18 +1,16 @@
-*{
-    margin: 0;
-    padding: 0;
+body,
+p,
+h5,
+h4,
+h3 {
+    margin: 0
 }
 
-body{
+body {
     background-color: #080b0e;
 }
 
-#game-screen{
-    height: 100%;
-    margin: 0;
-}
-
-.screen{
+.screen {
     width: 100%;
     height: 100vh;
     display: none !important;
@@ -21,11 +19,8 @@ body{
     position: fixed;
     top: 0;
     left: 0;
-    display: flex;
-    flex-direction: column;
 }
-
-#end-creen .screen .active{
+.screen.active {
     display: flex !important;
 }
 
@@ -36,7 +31,6 @@ body{
     padding: 2%;
     color: #eee;
     display: flex;
-    text-align: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -94,4 +88,71 @@ body{
 
 .text-center{
     text-align: center;
+}
+
+.countdown{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.countdown .countdown-title{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #eee;
+    margin-bottom: 1rem;
+}
+
+.countdown .countdown-counter{
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #eee;
+}
+
+.sidebar{
+    height: 100vh;
+    min-width: 15%;
+    color: #eee;
+    position: fixed;
+    top: 10;
+    left: 0;
+}
+
+.player-info{
+    margin-top: 20px;
+}
+
+.player-info .player-info-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid #1c282a;
+    font-size: 1.2rem;
+}
+
+.menu-bar{
+    margin-top: 20px;
+    background-color: #1c282a;
+    padding: 30px 10px;
+    min-height: 40vh;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.menu-bar .menu-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.menu-bar .menu-detail{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.screen-overlay{
+    backdrop-filter: blur(2px) brightness(60%);
 }

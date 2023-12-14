@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="game-screen">
-        <div id="instructions-screen" class="screen">
+        <div id="instructions-screen" class="screen active">
             <div class="dialog">
                 <h5 class="dialog-title">Instructions for Attack on Virus</h5>
                 <div class="dialog-content">
@@ -24,7 +24,42 @@
                 <button class="btn btn-primary">Play</button>
             </div>
         </div>
-        <div id="pause-screen" class="screen">
+        <div id="countdown-screen" class="screen">
+            <div class="countdown">
+                <h1 class="countdown-title">Ready</h1>
+                <p class="countdown-counter">3</p>
+            </div>
+        </div>
+        <div id="main-screen" class="screen ">
+            <div class="sidebar">
+                <div class="player-info">
+                    <div class="player-info-item">
+                        <p class="player-info-title">Time</p>
+                        <p class="player-info-value" id="time-value">00:00</p>
+                    </div>
+                    <div class="player-info-item">
+                        <p class="player-info-title">Score</p>
+                        <p class="player-info-value" id="score-value">0</p>
+                    </div>
+                    <div class="player-info-item">
+                        <p class="player-info-title">Fail</p>
+                        <p class="player-info-value" id="fail-value">0</p>
+                    </div>
+                    <div class="player-info-item">
+                        <p class="player-info-title">Player</p>
+                        <p class="player-info-value" id="player-value">""</p>
+                    </div>
+                </div>
+                <div class="menu-bar">
+                    <h4 class="menu-title">Virus Slayer</h4>
+                    <div class="menu-detail">
+                        <p>restart</p>
+                        <p>quit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="pause-screen" class="screen screen-overlay ">
             <div class="dialog">
                 <h5 class="dialog-title">Game Paused</h5>
                 <div id="button-group">
@@ -33,7 +68,7 @@
                 </div>
             </div>
         </div>
-        <div id="end-screen" class="screen.active">
+        <div id="end-screen" class="screen screen-overlay ">
             <div class="dialog">
                 <h5 class="dialog-title">Game Over</h5>
                 <div class="dialog-content text-center">
