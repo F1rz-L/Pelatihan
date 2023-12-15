@@ -5,33 +5,41 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Event Listeners
     // keyup Document
-    document.addEventListener('keyup', function(e){
-        if(e.key === 'Escape' && gameState == 'playing'){
+    document.querySelector('#main-screen').addEventListener('keyup', function(e){
+        if(e.key === 'Escape'){
             pauseGame()
         }
-        if(e.key === 'Escape' && gameState == 'pause'){
+    })
+
+    document.querySelector('#pause-screen').addEventListener('keyup', function(e){
+        if(e.key === 'Escape'){
             resumeGame()
         }
     })
 
-
     document.querySelector('.form-control').addEventListener('keyup', function(e){
-        const btnPlay = document.getElementById('btn-play')
-        if (e.target.value.trim() == ""){
-            btnPlay.classList.add('disabled')
-        }else if (e.target.value.trim() != ""){
-            btnPlay.classList.remove('disabled')
-        }
+        checkPlayerInput()
     })
 
     document.getElementById('btn-play').addEventListener('click', function(e){
         e.preventDefault()
         playerName = document.querySelector('.form-control').value
-        setActiveScreen('countdown-screen', true)
-        startCountdown()
+        if(playerName.trim() != ""){
+            openCountdownScreen()
+        }
     })
 
     // functions
+    const checkPlayerInput = () => {
+        const input = document.querySelector('.form-control').value
+        const btnPlay = document.getElementById('btn-play')
+        if (input.trim() == ""){
+            btnPlay.classList.add('disabled')
+        }else if (input.trim() != ""){
+            btnPlay.classList.remove('disabled')
+        }
+    }
+
     const startCountdown = () => {
         let countdown = 3
         const cd = document.querySelector('.countdown-counter')
@@ -41,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             cd.innerHTML = countdown
             if(countdown == 0){
                 clearInterval(intervalCountdown)
-                startGame()
+                setActiveScreen('main-screen', true)
             }
         }, 1000)
     }
@@ -60,11 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const screen = document.getElementById(screenID)
         screen.classList.add('active')
-    }
-
-    const startGame = () => {
-        gameState = 'playing'
-        setActiveScreen('main-screen', true)
+        document.getElementById(screenID).focus()
     }
 
     const pauseGame = () => {
@@ -82,7 +86,11 @@ document.addEventListener('DOMContentLoaded', function() {
         setActiveScreen('end-screen', true)
     }
 
-
+    const openCountdownScreen = () => {
+        setActiveScreen('countdown-screen', true)
+        startCountdown()
+    }
 
     setActiveScreen("instructions-screen", true)
+    checkPlayerInput()
 })

@@ -164,7 +164,7 @@ body {
 }
 
 .screen-overlay{
-    backdrop-filter: blur(2px) brightness(60%);
+    backdrop-filter: blur(2.5px) brightness(60%);
 }
 
 
