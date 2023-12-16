@@ -161,6 +161,12 @@ body {
 .menu-bar .menu-detail{
     margin-top: 30px;
     margin-bottom: 50px;
+    font-size: 1.3rem;
+}
+
+.menu-bar .menu-detail p{
+    margin-top: 10px;
+    cursor: pointer;
 }
 
 .screen-overlay{

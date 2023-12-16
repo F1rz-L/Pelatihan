@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() { 
     let gameState = 'instruction'
     let intervalCountdown = null
+    let intervalTimer = null
     let playerName = ''
     
     // Event Listeners
@@ -20,15 +21,42 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.form-control').addEventListener('keyup', function(e){
         checkPlayerInput()
     })
+    
+    // Click Event
 
     document.getElementById('btn-play').addEventListener('click', function(e){
         e.preventDefault()
         playerName = document.querySelector('.form-control').value
         if(playerName.trim() != ""){
             openCountdownScreen()
+            document.getElementById('player-value').innerHTML = playerName
         }
     })
 
+    document.getElementById('btn-continue').addEventListener('click', function(e){
+        e.preventDefault()
+        resumeGame()
+    })
+
+    document.getElementById('btn-restart').addEventListener('click', function(e){
+        e.preventDefault()
+        stopTimer()
+        openCountdownScreen()
+    })
+
+    document.getElementById('menu-restart').addEventListener('click', function(e){
+        e.preventDefault()
+        stopTimer()
+        openCountdownScreen()
+    })
+
+    document.getElementById('menu-quit').addEventListener('click', function(e){
+        e.preventDefault()
+        stopTimer()
+        openInstructionScreen()
+    })
+
+    //
     // functions
     const checkPlayerInput = () => {
         const input = document.querySelector('.form-control').value
@@ -50,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if(countdown == 0){
                 clearInterval(intervalCountdown)
                 setActiveScreen('main-screen', true)
+                startTimer(true)
             }
         }, 1000)
     }
@@ -72,13 +101,42 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const pauseGame = () => {
+        stopTimer()
         gameState = 'pause'
         setActiveScreen('pause-screen')
     }
 
     const resumeGame = () => {
+        startTimer()
         gameState = 'playing'
         setActiveScreen('main-screen', true)
+    }
+
+    const startTimer = (clear = false) => {
+        if(clear){
+            document.getElementById('time-value').innerHTML = '00:00'
+        }
+
+        intervalTimer = setInterval(() => {
+            const time = document.getElementById('time-value').innerHTML
+            const timeSplit = time.split(':')
+            let minute = parseInt(timeSplit[0])
+            let second = parseInt(timeSplit[1])
+            if(second < 59){
+                second++
+            } else {
+                second = 0
+                minute++
+            }
+            second = second.toString().padStart(2, '0')
+            minute = minute.toString().padStart(2, '0')
+
+            document.getElementById('time-value').innerHTML = `${minute}:${second}`
+        },1000)
+    }
+
+    const stopTimer = () => {
+        clearInterval(intervalTimer)
     }
 
     const endGame = () => {
@@ -91,6 +149,10 @@ document.addEventListener('DOMContentLoaded', function() {
         startCountdown()
     }
 
-    setActiveScreen("instructions-screen", true)
-    checkPlayerInput()
+    function openInstructionScreen(){
+        setActiveScreen("instructions-screen", true)
+        checkPlayerInput()
+    }
+
+    openInstructionScreen()
 })
