@@ -173,6 +173,11 @@ body {
     backdrop-filter: blur(2.5px) brightness(60%);
 }
 
+#game-canvas{
+    height: 100vh;
+    background-color: #eee;
+}
+
 
 /* Animationne */
 @keyframes count{
