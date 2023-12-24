@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const buttonHeight = 150
     const lineHeight = 10
     const dangerHeight = 400
+    let spdIncrement = 0
+    let spwnIncrement = 0
     let virusList = []
     const fileButtonName = []
     
@@ -79,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const getCanvas = () => {
         return /** @type {HTMLCanvasElement} */ (document.getElementById('game-canvas'))
     }
-
     const getContext = () => {
         return getCanvas().getContext('2d')
     }
@@ -210,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.image = new Image()
             this.image.src = 'img/virus.png'
             this.y = 0
-            this.step = 5
+            this.step = 5 + spdIncrement
             this.hit = false
             this.xList = [0,101,202,303]
 
@@ -246,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if(this.isDraw()){
                 this.context.drawImage(this.image, this.x, this.y, this.width, this.height)
                 this.y += this.step
-                console.log(this.y)
+                console.log(this.step)
             }
         }
     }
@@ -285,11 +286,16 @@ document.addEventListener('DOMContentLoaded', function() {
         intervalVirus = setInterval(() => {
             const virus = new Virus()
             virusList.push(virus)
-        }, 1500)
+        }, 1500 + spwnIncrement)
     }
 
     function stopGenerateVirus(){
         clearInterval(intervalVirus)
+    }
+
+    function spdIncrease(){
+        spdIncrement += .3
+        spwnIncrement =+ 100
     }
 
     function keyEventVirus(key){
@@ -301,6 +307,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if(virus.isDanger()){
                     score++
                     virus.attack()
+                    spdIncrease()
                     break;
                 }
             }
